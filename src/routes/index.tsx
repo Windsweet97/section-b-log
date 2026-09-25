@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useSearch } from "@tanstack/react-router";
 import { argAudio } from "@/lib/audio";
 import { useArgStore } from "@/lib/arg-store";
 import { SectionB } from "@/components/section-b";
@@ -13,8 +13,8 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-function Home() {
-  const { layer } = Route.useSearch();
+export function Home() {
+  const { layer } = useSearch({ strict: false }) as IndexSearch;
   const entered = useArgStore((s) => s.entered);
   const enter = useArgStore((s) => s.enter);
   const unlockInner = useArgStore((s) => s.unlockInner);

@@ -61,7 +61,7 @@ function SectionAPage() {
               onClick={() =>
                 startGlitch({
                   message: ">> RETURNING TO INNER SURFACE...",
-                  href: "/?layer=inner",
+                  href: "/B.html?layer=inner",
                 })
               }
             >

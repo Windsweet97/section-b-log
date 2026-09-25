@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BDothtmlRouteImport } from './routes/B[.]html'
 import { Route as KmtRouteImport } from './routes/kmt'
 import { Route as SectionARouteImport } from './routes/section-a'
 import { Route as WiredRouteImport } from './routes/wired'
@@ -17,6 +18,11 @@ import { Route as WiredRouteImport } from './routes/wired'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BDothtmlRoute = BDothtmlRouteImport.update({
+  id: '/B.html',
+  path: '/B.html',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KmtRoute = KmtRouteImport.update({
@@ -37,12 +43,14 @@ const WiredRoute = WiredRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/B.html': typeof BDothtmlRoute
   '/kmt': typeof KmtRoute
   '/section-a': typeof SectionARoute
   '/wired': typeof WiredRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/B.html': typeof BDothtmlRoute
   '/kmt': typeof KmtRoute
   '/section-a': typeof SectionARoute
   '/wired': typeof WiredRoute
@@ -50,20 +58,22 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/B.html': typeof BDothtmlRoute
   '/kmt': typeof KmtRoute
   '/section-a': typeof SectionARoute
   '/wired': typeof WiredRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/kmt' | '/section-a' | '/wired'
+  fullPaths: '/' | '/B.html' | '/kmt' | '/section-a' | '/wired'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/kmt' | '/section-a' | '/wired'
-  id: '__root__' | '/' | '/kmt' | '/section-a' | '/wired'
+  to: '/' | '/B.html' | '/kmt' | '/section-a' | '/wired'
+  id: '__root__' | '/' | '/B.html' | '/kmt' | '/section-a' | '/wired'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BDothtmlRoute: typeof BDothtmlRoute
   KmtRoute: typeof KmtRoute
   SectionARoute: typeof SectionARoute
   WiredRoute: typeof WiredRoute
@@ -76,6 +86,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/B.html': {
+      id: '/B.html'
+      path: '/B.html'
+      fullPath: '/B.html'
+      preLoaderRoute: typeof BDothtmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/kmt': {
@@ -104,6 +121,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BDothtmlRoute: BDothtmlRoute,
   KmtRoute: KmtRoute,
   SectionARoute: SectionARoute,
   WiredRoute: WiredRoute,

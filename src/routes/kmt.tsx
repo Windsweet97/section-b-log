@@ -34,7 +34,7 @@ function KmtPage() {
               onClick={() =>
                 startGlitch({
                   message: ">> RETURNING TO SECTION_B...",
-                  href: "/?layer=inner",
+                  href: "/B.html?layer=inner",
                 })
               }
             >
@@ -96,7 +96,7 @@ function KmtPage() {
                   onClick={() =>
                     startGlitch({
                       message: ">> RETURNING TO INNER SURFACE...",
-                      href: "/?layer=inner",
+                      href: "/B.html?layer=inner",
                     })
                   }
                 >

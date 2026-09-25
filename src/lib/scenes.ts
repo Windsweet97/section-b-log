@@ -56,7 +56,7 @@ export const SCENES: Record<NodeId, Scene> = {
     choices: [
       { label: "Go to the rooftop", node: "rooftop" },
       { label: "Sit at the terminal", node: "boot_pc" },
-      { label: "Open SECTION_B.LOG", href: "/" },
+      { label: "Open SECTION_B.LOG", href: "/B.html" },
     ],
   },
   rooftop: {
@@ -106,7 +106,7 @@ export const SCENES: Record<NodeId, Scene> = {
       },
     ],
     choices: [
-      { label: "Open SECTION_B.LOG", href: "/" },
+      { label: "Open SECTION_B.LOG", href: "/B.html" },
       { label: "Enter the Deep Wired", node: "deep_wired_entry" },
       { label: "Do not delete LAIN.SYS", node: "god_of_wired" },
     ],
@@ -133,7 +133,7 @@ export const SCENES: Record<NodeId, Scene> = {
     ],
     choices: [
       { label: "Approach the girl", node: "god_of_wired" },
-      { label: "Peel SECTION_B to the inner surface", href: "/?layer=inner" },
+      { label: "Peel SECTION_B to the inner surface", href: "/B.html?layer=inner" },
       { label: "Disconnect anyway", node: "system_crash" },
     ],
   },
@@ -161,7 +161,7 @@ export const SCENES: Record<NodeId, Scene> = {
     ],
     choices: [
       { label: "Cross into SECTION_A", href: "/section-a" },
-      { label: "Return to the inner surface", href: "/?layer=inner" },
+      { label: "Return to the inner surface", href: "/B.html?layer=inner" },
       { label: "Stay in the classroom loop", node: "start" },
     ],
   },
@@ -183,7 +183,7 @@ export const SCENES: Record<NodeId, Scene> = {
       },
     ],
     choices: [
-      { label: "Reboot to SECTION_B", href: "/" },
+      { label: "Reboot to SECTION_B", href: "/B.html" },
       { label: "Dump KMT.DAT", href: "/kmt" },
       { label: "Force connect anyway", node: "deep_wired_entry" },
     ],

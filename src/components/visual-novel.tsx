@@ -58,7 +58,7 @@ export function VisualNovel({ node }: { node: string }) {
               onClick={() =>
                 startGlitch({
                   message: ">> RETURNING TO SECTION_B...",
-                  href: "/",
+                  href: "/B.html",
                 })
               }
             >
