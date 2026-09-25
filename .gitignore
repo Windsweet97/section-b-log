@@ -1,0 +1,29 @@
+# dependencies
+node_modules/
+
+# build / preview
+dist/
+.output/
+.vinxi/
+.nitro/
+.tanstack/
+.vercel/
+.node_modules.lock
+
+# env / secrets
+.env
+.env.*
+!.env.example
+
+# logs & OS
+*.log
+.DS_Store
+Thumbs.db
+
+# grok sandbox internals (not part of the game)
+.grok/
+AGENTS.md
+
+# generated / local-only
+artifacts/
+*.local
